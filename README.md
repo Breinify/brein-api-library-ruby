@@ -86,7 +86,7 @@ Breinify.activity({'user' => {'firstName' => 'Fred',
 
 That's it! The call will be invoked. 
 
-The following snippets shows a different approach and the fields that are currently supported:
+The following snippets shows a different approach:
 
 ```Ruby
 
