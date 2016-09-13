@@ -65,12 +65,23 @@ The engine powering the DigitalDNA API provides two endpoints. The first endpoin
 The engine is informed of an activity by executing *Breinify.activity(...)*. 
 
 ```Ruby
-# invoke the activity call containing the mandatory fields
-Breinify.activity({'user' => {'Fred.Firestone@email.com',
-                              'sessionId' => 'r3V2kDAvFFL_-RBhuc_-Dg'},
-                  'activity' => {'description' => 'this is the description',
-                                 'type' => 'checkout',
-                                 'category' => 'food'}}
+# invoke the activity call 
+Breinify.activity({'user' => {'firstName' => 'Fred',
+                                'email' => 'Fred.Firestone@email.com',
+                                'lastName' => 'Firestone',
+                                'sessionId' => 'r3V2kDAvFFL_-RBhuc_-Dg'},
+                     'activity' => {
+                         'description' => 'this is the description',
+                         'type' => 'checkout',
+                         'category' => 'food',
+                         'tags' => {'string' => 'string',
+                                    'int' => 5,
+                                    'double' => 9.1,
+                                    'array' => %w(a b c),
+                                    'null' => nil}
+                     }
+                    })
+
 ```
 
 That's it! The call will be invoked. 
