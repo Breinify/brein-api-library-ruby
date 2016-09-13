@@ -8,11 +8,6 @@
 Breinify's DigitalDNA API puts dynamic behavior-based, people-driven data right at your fingertips.
 </p>
 
-[![version][gem-version]][gem-url]
-
-[![License][license-image]][license-url]
-
-
 ### Step By Step Introduction
 
 #### What is Breinify's DigitialDNA
