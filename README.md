@@ -67,12 +67,10 @@ The engine is informed of an activity by executing *Breinify.activity(...)*.
 ```Ruby
 # invoke the activity call containing the mandatory fields
 Breinify.activity({'user' => {'Fred.Firestone@email.com',
-                                'sessionId' => 'r3V2kDAvFFL_-RBhuc_-Dg'},
-                     'activity' => {
-                         'description' => 'this is the description',
-                         'type' => 'checkout',
-                         'category' => 'food'
-                     }}
+                              'sessionId' => 'r3V2kDAvFFL_-RBhuc_-Dg'},
+                  'activity' => {'description' => 'this is the description',
+                                 'type' => 'checkout',
+                                 'category' => 'food'}}
 ```
 
 That's it! The call will be invoked. 
