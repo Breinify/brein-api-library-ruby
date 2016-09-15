@@ -47,7 +47,7 @@ Breinify.setConfig({'apiKey' => '772A-47D7-93A3-4EA9-9D73-85B9-479B-16C6',
                     'activityEndpoint' => '/activity',
                     'lookupEndpoint' => '/lookup',
                     'secret' => 'lmcoj4k2ttzz66qamhg!=',
-                    'timeout' => 1000,
+                    'timeout' => 10,
                     'category' => 'food'
                     'url' => 'https://api.breinify.com'})
                     
