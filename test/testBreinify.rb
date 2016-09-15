@@ -26,15 +26,16 @@ rescue
 end
 
 
-Breinify.setConfig(nil)
+Breinify.set_config(nil)
 
 
-Breinify.setConfig({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
-                    'activityEndpoint' => '/activity',
-                    'lookupEndpoint' => '/lookup',
-                    'secret' => 'lmcoj4k27hbbszzyiqamhg==',
-                    'timeout' => 1000,
-                    'url' => 'https://api.breinify.com'})
+Breinify.set_config({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
+                     'activityEndpoint' => '/activity',
+                     'lookupEndpoint' => '/lookup',
+                     'secret' => 'lmcoj4k27hbbszzyiqamhg==',
+                     'timeout' => 12,
+                     'url' => 'https://api.breinify.com',
+                     'category' => 'sales'})
 
 
 # activity call
@@ -42,6 +43,17 @@ Breinify.setConfig({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
 
   # test with nil
   Breinify.activity(nil)
+
+  # activity without category
+  Breinify.activity({'user' => {'firstName' => 'Maria',
+                                'email' => 'user.email@me.com',
+                                'lastName' => 'Tester',
+                                'sessionId' => 'r3V2kDAvFFL_-RBhuc_-Dg'},
+                     'activity' => {
+                         'description' => 'this is the description',
+                         'type' => 'checkout'
+                     }
+                    })
 
   userData = Hash.new
   userData['email'] = 'user.email@me.com'
@@ -65,7 +77,8 @@ Breinify.setConfig({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
   requestData['activity'] = activityData
   requestData['ipAddress'] = '10.111.222.333'
 
-  Breinify.activity(requestData)
+
+
 
   Breinify.activity({'user' => {'firstName' => 'Maria',
                                 'email' => 'user.email@me.com',
@@ -74,8 +87,18 @@ Breinify.setConfig({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
                      'activity' => {
                          'description' => 'this is the description',
                          'type' => 'checkout',
-                         'category' => 'food'
-                     }})
+                         'category' => 'food',
+                         'tags' => {'string' => 'string',
+                                    'int' => 5,
+                                    'double' => 9.1,
+                                    'array' => %w(a b c),
+                                    'null' => nil}
+                     }
+                    })
+
+
+  Breinify.activity(requestData)
+
 
   Breinify.activity({'user' => {'firstName' => 'Maria',
                                 'email' => 'user.email@me.com',
