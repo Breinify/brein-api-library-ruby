@@ -6,7 +6,7 @@ require 'Breinify/version'
 Gem::Specification.new do |spec|
   spec.name          = "Breinify"
   spec.version       = Breinify::VERSION
-  spec.authors       = ["Marco"]
+  spec.authors       = ["Breinify, Marco Recchioni"]
   spec.email         = ["marco.recchioni@breinify.com"]
 
   spec.summary       = %q{Breinify´s DigitalDNA API puts dynamic behavior-based, people-driven data right at your fingertips.}

@@ -39,7 +39,7 @@ Breinify.set_config({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
 
 
 # activity call
-1.upto(10) {
+1.upto(1000) {
 
   # test with nil
   Breinify.activity(nil)
@@ -51,7 +51,7 @@ Breinify.set_config({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
                                 'sessionId' => 'r3V2kDAvFFL_-RBhuc_-Dg'},
                      'activity' => {
                          'description' => 'this is the description',
-                         'type' => 'checkout'
+                         'type' => 'login'
                      }
                     })
 
@@ -70,7 +70,7 @@ Breinify.set_config({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
 
   activityData = Hash.new
   activityData['description'] = 'this is the description'
-  activityData['type'] = 'checkout'
+  activityData['type'] = 'addToCart'
 
   requestData = Hash.new
   requestData['user'] = userData
@@ -86,7 +86,7 @@ Breinify.set_config({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
                                 'sessionId' => 'r3V2kDAvFFL_-RBhuc_-Dg'},
                      'activity' => {
                          'description' => 'this is the description',
-                         'type' => 'checkout',
+                         'type' => 'pageVisit',
                          'category' => 'food',
                          'tags' => {'string' => 'string',
                                     'int' => 5,

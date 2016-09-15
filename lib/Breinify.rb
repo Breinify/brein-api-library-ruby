@@ -10,9 +10,9 @@ module Breinify
   ##
   # LOGGING
   # logger
-  $log = Logger.new(STDOUT)
-  ## $log = Logger.new('breinify.log', 'daily')
-  $log.sev_threshold = Logger::DEBUG
+  ##$log = Logger.new(STDOUT)
+  $log = Logger.new('breinify.log', 'daily')
+  $log.sev_threshold = Logger::ERROR
 
   ##
   # == Description
@@ -132,14 +132,14 @@ module Breinify
 
     attr_accessor :http,
                   :request,
-                  :initDone
+                  :init_done
 
     ##
     # Create an instance of BreinConfig
     #
     def initialize
       @brein_config = BreinConfig.instance
-      @initDone = false
+      @init_done = false
     end
 
     ##
@@ -147,7 +147,7 @@ module Breinify
     def init_rest
 
       # if the initialization has already been done then go back
-      if @initDone
+      if @init_done
         return
       end
 
@@ -166,7 +166,7 @@ module Breinify
       @request = Net::HTTP::Post.new(uri.request_uri, {'accept': 'application/json'})
 
       # indicates that the initializing for HTTP instance variables has been done
-      @initDone = true
+      @init_done = true
     end
 
     ##
@@ -241,11 +241,11 @@ module Breinify
 
         # prepare the body and send the request
         init_rest
-        request.body = data.to_json
-        $log.debug 'JSON data request is: ' + data.to_json.to_s
+        @request.body = data.to_json
+        $log.debug 'JSON data request is: ' + @request.body.to_json.to_s
 
         # Send the request
-        response = http.request(request)
+        response = http.request(@request)
         $log.debug 'response from call is: ' + response.to_s
 
       rescue Exception => e
