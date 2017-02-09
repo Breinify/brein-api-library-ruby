@@ -51,7 +51,7 @@ Breinify.set_config({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
                                 'sessionId' => 'r3V2kDAvFFL_-RBhuc_-Dg'},
                      'activity' => {
                          'description' => 'this is the description',
-                         'type' => 'login'
+                         'type' => 'paginaUno'
                      }
                     })
 
@@ -78,6 +78,7 @@ Breinify.set_config({'apiKey' => 'CA8A-8D28-3408-45A8-8E20-8474-06C0-8548',
   requestData['ipAddress'] = '10.111.222.333'
 
 
+  puts 'Test'
 
 
   Breinify.activity({'user' => {'firstName' => 'Maria',

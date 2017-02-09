@@ -163,7 +163,7 @@ module Breinify
       @http.use_ssl = true if uri.scheme == 'https'
 
       # request itself
-      @request = Net::HTTP::Post.new(uri.request_uri, {'accept': 'application/json'})
+      @request = Net::HTTP::Post.new(uri.request_uri, 'Content-Type' => 'application/json')
 
       # indicates that the initializing for HTTP instance variables has been done
       @init_done = true
